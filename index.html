@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>26.9—27.9 年度目标 · 五步路线</title>
+<style>
+  :root{
+    --ink:#1f2430;
+    --navy:#1B3A63;
+    --navy-deep:#142c4c;
+    --orange:#D96B3C;
+    --cream:#FAF7F0;
+    --paper:#ffffff;
+    --line:#ded9cd;
+    --muted:#7b7a76;
+    --yellow:#FBE95A;
+    --blue:#2f6fb5;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:1200px;margin:0 auto;padding:0 44px 72px;}
+  .num{font-variant-numeric:tabular-nums;}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:rgba(250,247,240,.93);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(222,217,205,.9);
+  }
+  .topbar-in{max-width:1200px;margin:0 auto;padding:9px 44px;display:flex;align-items:center;gap:22px;}
+  .brand{font-size:12.5px;font-weight:700;color:var(--navy);letter-spacing:.04em;white-space:nowrap;}
+  .brand i{font-style:normal;color:var(--orange);}
+  .navlinks{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{
+    font-size:12.5px;color:var(--muted);text-decoration:none;white-space:nowrap;
+    padding:2px 0;border-bottom:1.5px solid transparent;
+  }
+  .navlinks a:hover{color:var(--navy);}
+  .navlinks a.on{color:var(--navy);border-bottom-color:var(--orange);}
+
+  /* ---------- 头部 ---------- */
+  header.hero{padding:52px 0 8px;border-bottom:2px solid var(--navy);}
+  .kicker{font-size:12.5px;letter-spacing:.22em;color:var(--orange);font-weight:700;margin-bottom:12px;}
+  h1{font-size:44px;line-height:1.16;margin:0 0 18px;font-weight:700;color:var(--navy);letter-spacing:.005em;}
+  h1 em{font-style:normal;color:var(--orange);}
+  .lead{max-width:640px;font-size:15.5px;color:#414751;margin:0 0 34px;line-height:1.85;}
+  .lead b{color:var(--navy);}
+  .hero-line{display:flex;gap:0;border-top:1px solid var(--line);margin-bottom:-2px;}
+  .stat{flex:1;padding:20px 26px 22px;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:0;}
+  .stat .k{font-size:11.5px;letter-spacing:.16em;color:var(--muted);margin-bottom:2px;}
+  .stat .v{font-size:34px;font-weight:700;color:var(--navy);line-height:1.15;letter-spacing:-.01em;}
+  .stat .v span{font-size:13px;font-weight:600;color:var(--orange);margin-left:4px;letter-spacing:.02em;}
+  .stat .s{font-size:12px;color:var(--muted);margin-top:2px;}
+  .stat.hi{background:var(--navy);}
+  .stat.hi .k{color:#9fb4cf;}
+  .stat.hi .v{color:#fff;}
+  .stat.hi .s{color:#b9c9dc;}
+
+  section{margin-top:58px;scroll-margin-top:64px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:26px;}
+  .sec-head .no{font-size:11.5px;font-weight:700;color:var(--orange);letter-spacing:.14em;}
+  .sec-head h2{font-size:20px;margin:0;color:var(--navy);font-weight:700;letter-spacing:.02em;}
+  .sec-head .desc{margin-left:auto;font-size:12.5px;color:var(--muted);}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:6px;}
+
+  /* ---------- 梦想板 ---------- */
+  .dream-wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:34px;align-items:start;}
+  .polaroid{
+    position:relative;background:#fff;padding:12px 12px 40px;border:1px solid #e8e2d4;
+    box-shadow:0 12px 30px rgba(27,58,99,.10);transform:rotate(-.5deg);cursor:zoom-in;
+  }
+  .polaroid img{display:block;width:100%;height:auto;}
+  .polaroid figcaption{
+    position:absolute;left:0;right:0;bottom:11px;text-align:center;
+    font-size:12px;color:var(--muted);letter-spacing:.06em;
+  }
+  .tape{
+    position:absolute;width:88px;height:26px;background:rgba(251,233,90,.55);
+    border-left:1px dashed rgba(180,165,60,.4);border-right:1px dashed rgba(180,165,60,.4);
+  }
+  .tape.tl{top:-13px;left:34px;transform:rotate(-4deg);}
+  .tape.br{bottom:26px;right:-16px;transform:rotate(6deg);}
+  .vision{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .vision-row{background:#fff;padding:15px 18px;display:flex;gap:16px;align-items:flex-start;}
+  .vision-row .lab{
+    flex:0 0 62px;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.12em;padding-top:2px;
+  }
+  .vision-row .txt{font-size:14px;color:#383d47;line-height:1.7;}
+  .vision-row .txt b{color:var(--navy);font-weight:700;}
+  .vision-row .txt small{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;}
+  .hand{margin:16px 0 0;font-size:12px;color:var(--muted);line-height:1.7;padding-left:14px;border-left:2px solid var(--yellow);}
+
+  /* ---------- 时间线 ---------- */
+  .timeline{list-style:none;margin:0;padding:0;position:relative;}
+  .tl-item{display:grid;grid-template-columns:118px 22px minmax(0,1fr);gap:20px;padding-bottom:22px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-date{padding-top:16px;text-align:right;}
+  .tl-date b{display:block;font-size:19px;font-weight:700;color:var(--navy);letter-spacing:.01em;line-height:1.25;}
+  .tl-date span{display:block;font-size:11.5px;color:var(--muted);letter-spacing:.06em;}
+  .tl-rail{position:relative;}
+  .tl-rail::before{
+    content:"";position:absolute;left:10.5px;top:0;bottom:-22px;width:1.5px;background:var(--line);
+  }
+  .tl-item:first-child .tl-rail::before{top:24px;}
+  .tl-item:last-child .tl-rail::before{bottom:calc(100% - 24px);}
+  .tl-rail i{
+    position:absolute;left:4px;top:18px;width:15px;height:15px;border-radius:50%;
+    background:var(--cream);border:2px solid var(--navy);z-index:2;
+  }
+  .tl-item.done .tl-rail i{background:var(--navy);}
+  .tl-item.now .tl-rail i{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 5px rgba(217,107,60,.14);}
+  .tl-card{padding:18px 22px 18px;border-left:3px solid var(--navy);background:#fff;border-radius:0 6px 6px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .tl-item.now .tl-card{border-left-color:var(--orange);}
+  .tl-card h3{margin:0 0 6px;font-size:17px;color:var(--navy);display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .tl-num{font-size:13px;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums;}
+  .tag{font-size:10.5px;font-weight:600;letter-spacing:.08em;padding:1.5px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:#faf8f2;}
+  .tag.done{color:#fff;background:var(--navy);border-color:var(--navy);}
+  .tag.now{color:#fff;background:var(--orange);border-color:var(--orange);}
+  .tl-line{margin:0 0 6px;font-size:13.5px;color:#3c414a;}
+  .tl-line b{color:var(--navy);}
+  .tl-note{margin:0;font-size:12.5px;color:var(--muted);line-height:1.7;}
+  .tl-extra{margin-top:12px;}
+
+  /* 大会计数器 */
+  .assembly{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .dots{display:flex;gap:5px;flex-wrap:wrap;max-width:340px;}
+  .dot{
+    width:17px;height:17px;border-radius:50%;border:1.5px solid #cfc9bc;background:#fff;
+    cursor:pointer;padding:0;transition:background .12s,border-color .12s;
+  }
+  .dot:hover{border-color:var(--orange);}
+  .dot.on{background:var(--orange);border-color:var(--orange);}
+  .assembly .count{font-size:12.5px;color:var(--navy);font-weight:700;font-variant-numeric:tabular-nums;}
+
+  /* ---------- 收入 ---------- */
+  .tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch;}
+  .tier{position:relative;background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px 20px 18px;display:flex;flex-direction:column;}
+  .tier.pick{border:1.5px solid var(--navy);box-shadow:0 10px 26px rgba(27,58,99,.08);}
+  .tier .ribbon{
+    position:absolute;top:-11px;left:20px;font-size:10.5px;font-weight:700;letter-spacing:.1em;
+    background:var(--navy);color:#fff;padding:2px 10px;border-radius:3px;
+  }
+  .tier .t-k{font-size:11.5px;letter-spacing:.14em;color:var(--muted);}
+  .tier .t-pv{font-size:27px;font-weight:700;color:var(--navy);line-height:1.2;margin-top:2px;}
+  .tier .t-pv span{font-size:12.5px;color:var(--muted);font-weight:600;margin-left:4px;letter-spacing:.03em;}
+  .tier .t-income{margin:10px 0 2px;font-size:31px;font-weight:700;color:var(--orange);letter-spacing:-.01em;line-height:1.15;font-variant-numeric:tabular-nums;}
+  .tier .t-income small{font-size:11.5px;color:var(--muted);font-weight:600;display:block;letter-spacing:.03em;margin-top:1px;}
+  .legbars{margin:14px 0 12px;display:flex;flex-direction:column;gap:5px;}
+  .legbar{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
+  .legbar .track{flex:1;height:7px;background:#f1ece1;border-radius:3px;overflow:hidden;}
+  .legbar .track i{display:block;height:100%;background:var(--navy);border-radius:3px;}
+  .legbar b{width:42px;text-align:right;color:var(--navy);font-variant-numeric:tabular-nums;font-weight:600;}
+  .tier .bonus{margin:4px 0 0;padding-top:12px;border-top:1px dotted var(--line);font-size:12px;color:#4a4f5a;}
+  .tier .bonus div{display:flex;justify-content:space-between;gap:10px;padding:1.5px 0;}
+  .tier .bonus div span{color:var(--muted);}
+  .tier .bonus div b{font-variant-numeric:tabular-nums;font-weight:600;color:var(--navy);}
+  .tier .bonus div b.z{color:#c3bfb4;font-weight:400;}
+  .tier .t-foot{margin-top:auto;padding-top:12px;font-size:11.5px;color:var(--muted);line-height:1.65;}
+  .income-note{margin:16px 0 0;font-size:12px;color:var(--muted);line-height:1.75;}
+
+  /* ---------- 团队结构 ---------- */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+  .tab{
+    border:1px solid var(--line);background:#fff;color:var(--muted);
+    font-family:inherit;font-size:12.5px;font-weight:600;padding:6px 15px;border-radius:999px;cursor:pointer;
+    transition:all .12s;letter-spacing:.02em;
+  }
+  .tab:hover{color:var(--navy);border-color:#c9c2b2;}
+  .tab.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .stage-meta{display:flex;flex-wrap:wrap;gap:8px 26px;margin-bottom:18px;font-size:12.5px;color:var(--muted);}
+  .stage-meta b{color:var(--navy);font-variant-numeric:tabular-nums;}
+  .root{
+    background:var(--navy);color:#fff;border-radius:6px;padding:14px 20px;
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:10px;
+  }
+  .root .who{font-size:17px;font-weight:700;letter-spacing:.02em;}
+  .root .badge{font-size:10.5px;font-weight:600;letter-spacing:.08em;background:rgba(255,255,255,.17);padding:1px 8px;border-radius:999px;}
+  .root .sum{margin-left:auto;font-size:12.5px;color:#c4d3e4;font-variant-numeric:tabular-nums;}
+  .root .sum b{color:#fff;font-size:16px;margin-right:2px;}
+  .root::after{content:"";}
+  .legs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start;}
+  .leg{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .leg.new{border-style:dashed;background:#fcfaf4;}
+  .leg-h{display:flex;align-items:baseline;gap:9px;padding:13px 16px 11px;border-bottom:1px solid var(--line);}
+  .leg-h .idx{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--orange);}
+  .leg-h .name{font-size:15px;font-weight:700;color:var(--navy);}
+  .leg-h .pv{margin-left:auto;font-size:14px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;}
+  .leg-h .pv small{font-size:10.5px;color:var(--muted);font-weight:600;margin-left:2px;}
+  .leg-b{padding:8px 16px 14px;}
+  .chain{list-style:none;margin:0;padding:0;}
+  .chain li{
+    position:relative;padding:5px 0 5px 16px;font-size:13px;color:#3c414a;
+  }
+  .chain li::before{
+    content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:#cbc5b7;
+  }
+  .chain li::after{
+    content:"";position:absolute;left:2.5px;top:17px;bottom:-5px;width:1px;background:#e6e0d3;
+  }
+  .chain li:last-child::after{display:none;}
+  .chain li b{font-weight:600;color:var(--navy);}
+  .chain li .pv{font-size:11.5px;color:var(--orange);font-weight:600;margin-left:5px;font-variant-numeric:tabular-nums;}
+  .chain li .note{display:block;font-size:11px;color:var(--muted);line-height:1.55;margin-top:1px;}
+  .chain li.self::before{background:var(--orange);}
+  .sib-mark{color:#b9b3a4;margin-right:3px;font-size:11px;}
+  .loose{margin-top:14px;font-size:12px;color:var(--muted);}
+  .loose span{
+    display:inline-block;border:1px solid var(--line);background:#fff;border-radius:999px;
+    padding:2px 10px;margin:3px 4px 0 0;font-size:11.5px;color:#3c414a;
+  }
+  .side-notes{margin-top:12px;font-size:11.5px;color:var(--muted);line-height:1.8;}
+  .side-notes b{color:#4a4f5a;font-weight:600;}
+
+  /* ---------- 营业额 / 人数 ---------- */
+  .two{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px;align-items:start;}
+  .chart-card{padding:20px 22px 16px;}
+  .chart-card h3{margin:0 0 2px;font-size:14.5px;color:var(--navy);}
+  .chart-card .sub{margin:0 0 10px;font-size:11.5px;color:var(--muted);}
+  .chart-card svg{display:block;width:100%;height:auto;}
+  .legend{display:flex;gap:18px;margin-top:6px;font-size:11.5px;color:var(--muted);}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;}
+  .callout{
+    margin-top:16px;padding:14px 16px;background:#fffdf3;border:1px solid #efe6c4;border-radius:5px;
+    font-size:12.5px;color:#4a4f5a;line-height:1.8;
+  }
+  .callout b{color:var(--orange);}
+  .callout .hl{background:linear-gradient(transparent 58%, var(--yellow) 58%);padding:0 1px;}
+  .addwins{display:flex;flex-direction:column;gap:9px;margin-top:6px;}
+  .win{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:5px;padding:12px 14px;background:#fcfaf4;flex-wrap:wrap;}
+  .win .w-when{font-size:11.5px;letter-spacing:.06em;color:var(--orange);font-weight:700;flex:0 0 116px;}
+  .win .w-big{font-size:22px;font-weight:700;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums;}
+  .win .w-split{font-size:12px;color:#4a4f5a;margin-left:auto;text-align:right;}
+  .win .w-split b{color:var(--navy);}
+  .win .w-note{flex-basis:100%;font-size:11.5px;color:var(--muted);line-height:1.6;}
+
+  /* ---------- 个人工作量 ---------- */
+  .months{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;}
+  .mon{background:#fff;border:1px solid var(--line);border-radius:5px;padding:11px 8px 10px;text-align:center;}
+  .mon .m{font-size:15px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;}
+  .mon .y{font-size:10px;color:var(--muted);letter-spacing:.08em;margin-bottom:6px;}
+  .mon .h{font-size:10.5px;font-weight:600;color:var(--orange);line-height:1.5;min-height:16px;}
+  .mon .d{font-size:10.5px;color:var(--muted);line-height:1.5;margin-top:3px;}
+  .mon.empty .h,.mon.empty .d{color:#cbc6ba;}
+  .mon.now{background:#fff8ef;border-color:#ecccb8;}
+  .flow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr;align-items:stretch;gap:0;margin-top:22px;}
+  .flow .arrow{display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:18px;}
+  .flow-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:15px 17px;}
+  .flow-card .k{font-size:11px;letter-spacing:.12em;color:var(--muted);margin-bottom:2px;}
+  .flow-card .v{font-size:16px;font-weight:700;color:var(--navy);line-height:1.4;}
+  .flow-card .s{font-size:11.5px;color:var(--muted);margin-top:3px;}
+  .daily{margin-top:22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 22px;}
+  .daily h3{margin:0 0 2px;font-size:14.5px;color:var(--navy);}
+  .daily .sub{margin:0 0 10px;font-size:11.5px;color:var(--muted);}
+  .checks{display:flex;flex-direction:column;gap:2px;}
+  .check{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#3c414a;cursor:pointer;padding:4px 0;}
+  .check input{position:absolute;opacity:0;pointer-events:none;}
+  .check .box{
+    width:17px;height:17px;border:1.5px solid #cfc9bc;border-radius:3px;flex:0 0 auto;position:relative;
+    transition:all .12s;
+  }
+  .check input:checked + .box{background:var(--orange);border-color:var(--orange);}
+  .check input:checked + .box::after{
+    content:"";position:absolute;left:5px;top:1px;width:4px;height:9px;
+    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg);
+  }
+  .check input:checked ~ .txt{color:#a8a49a;text-decoration:line-through;}
+  .daily .score{text-align:right;}
+  .daily .score b{font-size:30px;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1;}
+  .daily .score span{font-size:12px;color:var(--muted);display:block;margin-top:4px;}
+
+  /* ---------- 奖励 ---------- */
+  .rewards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+  .reward{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px 20px 18px;position:relative;overflow:hidden;}
+  .reward::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--yellow);}
+  .reward .when{font-size:11.5px;letter-spacing:.12em;color:var(--orange);font-weight:700;}
+  .reward .what{font-size:19px;font-weight:700;color:var(--navy);margin:3px 0 4px;line-height:1.35;}
+  .reward .cond{font-size:12.5px;color:var(--muted);}
+  .reward .amt{margin-top:12px;font-size:12px;color:#4a4f5a;font-variant-numeric:tabular-nums;}
+  .reward .amt b{color:var(--navy);font-size:15px;}
+  .reward-gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;margin-bottom:10px;}
+  .rg{position:relative;margin:0;border-radius:6px;overflow:hidden;background:#0f1621;aspect-ratio:4/3;}
+  .rg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
+  .rg:hover img{transform:scale(1.05);}
+  .rg figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;
+    background:linear-gradient(transparent,rgba(15,22,33,.8));color:#fff;
+    font-size:12.5px;font-weight:600;letter-spacing:.02em;line-height:1.35;
+  }
+  .rg figcaption small{display:block;font-size:10.5px;font-weight:400;color:rgba(255,255,255,.72);margin-top:1px;letter-spacing:.03em;}
+  .gallery-note{margin:0 0 22px;font-size:11.5px;color:var(--muted);line-height:1.7;}
+  .awards{margin-top:20px;}
+  .awards table{width:100%;border-collapse:collapse;background:#fff;font-size:13px;}
+  .awards th,.awards td{border:1px solid var(--line);padding:9px 12px;text-align:left;}
+  .awards th{background:#f2eee4;color:var(--navy);font-size:12px;letter-spacing:.04em;font-weight:600;}
+  .awards td:last-child{font-variant-numeric:tabular-nums;color:#3c414a;}
+
+  footer{margin-top:60px;border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:#9a9a94;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  footer a{color:var(--navy);}
+
+  .lightbox{position:fixed;inset:0;background:rgba(20,24,32,.86);display:none;align-items:center;justify-content:center;z-index:90;padding:30px;cursor:zoom-out;}
+  .lightbox.show{display:flex;}
+  .lightbox img{max-width:100%;max-height:100%;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+
+  @media (max-width:960px){
+    .page{padding:0 20px 56px;}
+    .topbar-in{padding:8px 20px;}
+    header.hero{padding-top:34px;}
+    h1{font-size:31px;}
+    .hero-line{flex-wrap:wrap;}
+    .stat{flex:1 1 50%;border-bottom:1px solid var(--line);padding:16px 16px 18px;}
+    .stat:nth-child(2){border-right:0;}
+    .dream-wrap{grid-template-columns:1fr;gap:26px;}
+    .tiers{grid-template-columns:1fr;}
+    .legs{grid-template-columns:1fr;}
+    .two{grid-template-columns:1fr;}
+    .months{grid-template-columns:repeat(4,minmax(0,1fr));}
+    .flow{grid-template-columns:1fr;}
+    .flow .arrow{transform:rotate(90deg);height:26px;}
+    .daily{grid-template-columns:1fr;}
+    .daily .score{text-align:left;}
+    .rewards{grid-template-columns:1fr;}
+    .reward-gallery{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .tl-item{grid-template-columns:76px 18px minmax(0,1fr);gap:12px;}
+    .tl-date b{font-size:15px;}
+    .tl-rail::before{left:8px;}
+    .tl-rail i{left:1.5px;width:14px;height:14px;}
+    .sec-head{flex-wrap:wrap;}
+    .sec-head .desc{margin-left:0;flex-basis:100%;}
+  }
+  @media print{
+    body{background:#fff;}
+    .topbar{display:none;}
+    .page{max-width:none;padding:12mm;}
+    section{break-inside:avoid;}
+    .tier,.reward,.leg{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">26.9—27.9 <i>目标版</i></div>
+    <nav class="navlinks">
+      <a href="#dream">梦想板</a>
+      <a href="#steps">五步</a>
+      <a href="#money">收入</a>
+      <a href="#team">团队</a>
+      <a href="#sales">营业额</a>
+      <a href="#work">个人工作量</a>
+      <a href="#rewards">奖励</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+
+  <header class="hero">
+    <div class="kicker">年度目标 · 2026 年 9 月 — 2027 年 9 月</div>
+    <h1>把一年拆成<em>五步</em>：<br class="only-wide">1600pv → 10000pv</h1>
+    <p class="lead">
+      9 月拿下基础骨干奖；<b>12.20 巴厘岛</b>把 3—6 搭起来、新增 5 个伙伴；
+      <b>3.6</b> 团队到 25 人，<b>5.15</b> 到 30 人并拿到精英骨干奖；
+      <b>8.30</b> 冲最高分红比例。每一步都对应画板上的一张结构图。
+    </p>
+    <div class="hero-line">
+      <div class="stat">
+        <div class="k">现在 · 9 月</div>
+        <div class="v">1600<span>pv</span></div>
+        <div class="s">基础骨干奖 · 画板已打勾</div>
+      </div>
+      <div class="stat">
+        <div class="k">12.20 · 巴厘岛</div>
+        <div class="v">6<span>个 B 阶段</span></div>
+        <div class="s">新增 5 个伙伴 · 拿下基础骨干奖</div>
+      </div>
+      <div class="stat hi">
+        <div class="k">5.15 · 精英骨干奖</div>
+        <div class="v">30<span>人</span></div>
+        <div class="s">团队到 30 人 · 4000pv</div>
+      </div>
+      <div class="stat">
+        <div class="k">8.30 · 一年后</div>
+        <div class="v">10000<span>pv</span></div>
+        <div class="s">最高分红比例 · 21%</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 梦想板 ============ -->
+  <section id="dream">
+    <div class="sec-head">
+      <span class="no">01</span>
+      <h2>梦想板</h2>
+      <span class="desc">手写原样，右侧是板上写下的六个方向</span>
+    </div>
+
+    <div class="dream-wrap">
+      <figure class="polaroid" id="dream-photo">
+        <span class="tape tl"></span>
+        <img src="assets/dream.jpg" alt="2026.9—27.9 梦想板手写照片">
+        <span class="tape br"></span>
+        <figcaption>梦想板 · 26.9—27.9（点开可放大）</figcaption>
+      </figure>
+
+      <div>
+        <div class="vision">
+          <div class="vision-row">
+            <div class="lab">工作</div>
+            <div class="txt">主业 <b>30w</b><small>板上写在左上角的第一条</small></div>
+          </div>
+          <div class="vision-row">
+            <div class="lab">财富</div>
+            <div class="txt">月入 <b>4w</b>（3w + 1w）<small>对应 7000pv</small></div>
+          </div>
+          <div class="vision-row">
+            <div class="lab">成长</div>
+            <div class="txt"><b>坚韧</b> · <b>大心脏</b></div>
+          </div>
+          <div class="vision-row">
+            <div class="lab">生意</div>
+            <div class="txt">
+              <b>27.5：30 人</b>，做两轮 90 天习惯养成
+              <small>9 月基础骨干 1500 · 11 月大会 20 人 2000pv</small>
+            </div>
+          </div>
+          <div class="vision-row">
+            <div class="lab">奖励</div>
+            <div class="txt">
+              12 月 2600 · 酒吧、攀岩；1 月 20 人 · 温泉 spa 4000
+              <small>「奖励·旅游」那一栏</small>
+            </div>
+          </div>
+          <div class="vision-row">
+            <div class="lab">学业<br>健康</div>
+            <div class="txt">毕业 · 自己 / 妈<small>板右下角两条，原话照抄</small></div>
+          </div>
+        </div>
+        <p class="hand">数字和措辞都按板上手写照抄；看不清的地方没有补写。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 五步 ============ -->
+  <section id="steps">
+    <div class="sec-head">
+      <span class="no">02</span>
+      <h2>五步推进</h2>
+      <span class="desc">节点来自文档每一节的小标题</span>
+    </div>
+
+    <ol class="timeline">
+      <li class="tl-item done">
+        <div class="tl-date"><b>2026.09</b><span>第 1 步</span></div>
+        <div class="tl-rail"><i></i></div>
+        <div class="tl-card">
+          <h3>基础骨干奖 <span class="tag done">已打勾</span></h3>
+          <p class="tl-line">总 <b>1600pv</b> · 三条腿 600 / 800 / 200</p>
+          <p class="tl-note">画板里除了乐妍，其余 11 个名字都打了勾。</p>
+        </div>
+      </li>
+
+      <li class="tl-item now">
+        <div class="tl-date"><b>2026.12.20</b><span>第 2 步 · 巴厘岛</span></div>
+        <div class="tl-rail"><i></i></div>
+        <div class="tl-card">
+          <h3>把 3—6 搭起来 <span class="tag now">正在走</span> <span class="tl-num">6 个 B 阶段伙伴</span></h3>
+          <p class="tl-line">拿下基础骨干奖 · 新增 <b>5 个伙伴</b>（个人 2、团队 2）· 当前 <b>2000—2500pv</b></p>
+          <p class="tl-note">
+            个人 2 个主要是成长第三个团队；离 3-6，提升伙伴到 B 阶段。<br>
+            Leann 姐：一般拿完精英骨干奖，再开第四个腿；大概基础骨干到精英骨干的时间 6 个月，不过还是完全取决于个人工作量。
+          </p>
+          <div class="tl-extra assembly">
+            <div class="dots" id="assembly-dots"></div>
+            <span class="count" id="assembly-count"></span>
+          </div>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-date"><b>2027.03.06</b><span>第 3 步</span></div>
+        <div class="tl-rail"><i></i></div>
+        <div class="tl-card">
+          <h3>团队到 25 人 <span class="tag">新增 5 个</span></h3>
+          <p class="tl-line">个人 1 个，帮团队 3 个 · 三条腿 600 / 1500 / 800</p>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-date"><b>2027.05.15</b><span>第 4 步</span></div>
+        <div class="tl-rail"><i></i></div>
+        <div class="tl-card">
+          <h3>团队到 30 人 · 拿到精英骨干奖 <span class="tag">4000pv</span></h3>
+          <p class="tl-line">六条腿 <b>600 / 1500 / 800 / 600 / 200 / 200</b>，加个人 200pv 正好 4100</p>
+          <p class="tl-note">画板上六个新人的位置标了「1 月个人 / 2 月个人 / 3 月个人 / 4 月个人 / 5 月个人」。</p>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <div class="tl-date"><b>2027.08.30</b><span>第 5 步</span></div>
+        <div class="tl-rail"><i></i></div>
+        <div class="tl-card">
+          <h3>冲最高分红比例 <span class="tag">10000pv · 21%</span></h3>
+          <p class="tl-line">4000 分很重要 · 3、4 月把精英骨干奖拿下来，比较稳健</p>
+          <p class="tl-note">基础的核心是 3-6 架构实现的时期 + 个人工作量去推演：个人能不能有 2 个人通过筛选，开始积累顾客营业额，变成长客会。做积累。</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ 收入 ============ -->
+  <section id="money">
+    <div class="sec-head">
+      <span class="no">03</span>
+      <h2>三档收入模拟</h2>
+      <span class="desc">文档里三张 Income Simulator 截图的关键数字</span>
+    </div>
+
+    <div class="tiers">
+      <article class="tier">
+        <div class="t-k">现在 · 当前档</div>
+        <div class="t-pv">2000<span>pv · 12%</span></div>
+        <div class="t-income">$1,875<small>本月总收入（模拟表原值）</small></div>
+        <div class="legbars">
+          <div class="legbar"><span>市场1</span><span class="track"><i style="width:20%"></i></span><b>600</b></div>
+          <div class="legbar"><span>市场2</span><span class="track"><i style="width:33%"></i></span><b>1000</b></div>
+          <div class="legbar"><span>市场3</span><span class="track"><i style="width:7%"></i></span><b>200</b></div>
+        </div>
+        <div class="bonus">
+          <div><span>个人营业额奖金</span><b>¥300</b></div>
+          <div><span>6% 优惠券</span><b>¥120</b></div>
+          <div><span>差额奖金</span><b>¥1,050</b></div>
+          <div><span>基础骨干奖金</span><b>¥405</b></div>
+          <div><span>精英骨干奖金</span><b class="z">¥0</b></div>
+        </div>
+        <p class="t-foot">基础骨干奖 YES，精英骨干奖 NO。</p>
+      </article>
+
+      <article class="tier pick">
+        <span class="ribbon">5.15 目标</span>
+        <div class="t-k">精英骨干奖</div>
+        <div class="t-pv">4100<span>pv · 15%</span></div>
+        <div class="t-income">$7,515<small>本月总收入（模拟表原值）</small></div>
+        <div class="legbars">
+          <div class="legbar"><span>市场1</span><span class="track"><i style="width:20%"></i></span><b>600</b></div>
+          <div class="legbar"><span>市场2</span><span class="track"><i style="width:50%"></i></span><b>1500</b></div>
+          <div class="legbar"><span>市场3</span><span class="track"><i style="width:27%"></i></span><b>800</b></div>
+          <div class="legbar"><span>市场4</span><span class="track"><i style="width:20%"></i></span><b>600</b></div>
+          <div class="legbar"><span>市场5</span><span class="track"><i style="width:7%"></i></span><b>200</b></div>
+          <div class="legbar"><span>市场6</span><span class="track"><i style="width:7%"></i></span><b>200</b></div>
+        </div>
+        <div class="bonus">
+          <div><span>个人营业额奖金</span><b>¥375</b></div>
+          <div><span>差额奖金</span><b>¥3,975</b></div>
+          <div><span>基础骨干奖金</span><b>¥1,305</b></div>
+          <div><span>精英骨干奖金</span><b>¥1,740</b></div>
+          <div><span>本财年达标次数</span><b>3</b></div>
+        </div>
+        <p class="t-foot">基础骨干 YES，精英骨干 YES。六条腿，正好是 5.15 画板上的 600 / 1500 / 800 / 600 / 200 / 200。</p>
+      </article>
+
+      <article class="tier">
+        <div class="t-k">8.30 · 最高分红</div>
+        <div class="t-pv">10000<span>pv · 21%</span></div>
+        <div class="t-income">$25,735<small>本月总收入（模拟表原值）</small></div>
+        <div class="legbars">
+          <div class="legbar"><span>市场1</span><span class="track"><i style="width:20%"></i></span><b>600</b></div>
+          <div class="legbar"><span>市场2</span><span class="track"><i style="width:100%"></i></span><b>3000</b></div>
+          <div class="legbar"><span>市场3</span><span class="track"><i style="width:50%"></i></span><b>1500</b></div>
+          <div class="legbar"><span>市场4</span><span class="track"><i style="width:67%"></i></span><b>2000</b></div>
+          <div class="legbar"><span>市场5</span><span class="track"><i style="width:50%"></i></span><b>1500</b></div>
+          <div class="legbar"><span>市场6</span><span class="track"><i style="width:40%"></i></span><b>1200</b></div>
+        </div>
+        <div class="bonus">
+          <div><span>差额奖金</span><b>¥13,050</b></div>
+          <div><span>绩优营销之星月度</span><b>¥1,812.5</b></div>
+          <div><span>基础骨干奖金</span><b>¥4,072.5</b></div>
+          <div><span>精英骨干奖金</span><b>¥6,155</b></div>
+        </div>
+        <p class="t-foot">六条腿全部跑起来、总额 10000pv 时的样子。</p>
+      </article>
+    </div>
+
+    <p class="income-note">
+      口径说明：三档数字逐字取自文档里的三张 Income Simulator 截图，$ 是模拟表里的「本月总收入」，¥ 是各项奖金。
+      这是模拟工具按各市场 PV 算出来的，不是承诺收入。
+    </p>
+  </section>
+
+  <!-- ============ 团队结构 ============ -->
+  <section id="team">
+    <div class="sec-head">
+      <span class="no">04</span>
+      <h2>团队结构怎么长出来</h2>
+      <span class="desc">五张画板按月份切换</span>
+    </div>
+
+    <div class="tabs" id="stage-tabs"></div>
+    <div class="stage-meta" id="stage-meta"></div>
+
+    <div class="root">
+      <span class="who">诗媛</span>
+      <span class="badge">B 阶段</span>
+      <span class="badge">个人 200pv</span>
+      <span class="sum" id="root-sum"></span>
+    </div>
+
+    <div class="legs" id="legs"></div>
+    <div class="loose" id="loose"></div>
+    <div class="side-notes" id="side-notes"></div>
+  </section>
+
+  <!-- ============ 营业额 + 人数 ============ -->
+  <section id="sales">
+    <div class="sec-head">
+      <span class="no">05</span>
+      <h2>营业额与新增伙伴</h2>
+      <span class="desc">每个月两张票：个人 200pv + 顾客</span>
+    </div>
+
+    <div class="two">
+      <div class="card chart-card">
+        <h3>每月营业额</h3>
+        <p class="sub">个人部分每月固定 200pv；顾客部分 9-10 月 50pv，11 月 100pv，之后留空</p>
+        <svg viewBox="0 0 660 210" role="img" aria-label="9 月到次年 4 月的个人与顾客营业额定柱状图">
+          <line x1="36" y1="172" x2="648" y2="172" stroke="#ded9cd" stroke-width="1"/>
+          <line x1="36" y1="116" x2="648" y2="116" stroke="#eee9dd" stroke-width="1" stroke-dasharray="3 4"/>
+          <line x1="36" y1="60" x2="648" y2="60" stroke="#eee9dd" stroke-width="1" stroke-dasharray="3 4"/>
+          <text x="30" y="176" text-anchor="end" font-size="10" fill="#9a9a94">0</text>
+          <text x="30" y="120" text-anchor="end" font-size="10" fill="#9a9a94">100</text>
+          <text x="30" y="64" text-anchor="end" font-size="10" fill="#9a9a94">200</text>
+
+          <!-- 9 -->
+          <rect x="52" y="60" width="18" height="112" fill="#1B3A63"/>
+          <rect x="73" y="144" width="18" height="28" fill="#D96B3C"/>
+          <text x="71" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">9 月</text>
+          <!-- 10 -->
+          <rect x="126" y="60" width="18" height="112" fill="#1B3A63"/>
+          <rect x="147" y="144" width="18" height="28" fill="#D96B3C"/>
+          <text x="145" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">10 月</text>
+          <!-- 11 -->
+          <rect x="200" y="60" width="18" height="112" fill="#1B3A63"/>
+          <rect x="221" y="116" width="18" height="56" fill="#D96B3C"/>
+          <text x="219" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">11 月</text>
+          <!-- 12 -->
+          <rect x="274" y="60" width="18" height="112" fill="#1B3A63"/>
+          <text x="293" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">12 月</text>
+          <!-- 1 -->
+          <rect x="348" y="60" width="18" height="112" fill="#1B3A63"/>
+          <text x="367" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">1 月</text>
+          <!-- 2 -->
+          <rect x="422" y="60" width="18" height="112" fill="#1B3A63"/>
+          <text x="441" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">2 月</text>
+          <!-- 3 -->
+          <rect x="496" y="60" width="18" height="112" fill="#1B3A63"/>
+          <text x="515" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">3 月</text>
+          <!-- 4 -->
+          <rect x="570" y="60" width="18" height="112" fill="#1B3A63"/>
+          <text x="589" y="192" text-anchor="middle" font-size="11" fill="#7b7a76">4 月</text>
+
+          <text x="61" y="54" text-anchor="middle" font-size="9.5" fill="#1B3A63">200</text>
+          <text x="82" y="138" text-anchor="middle" font-size="9.5" fill="#D96B3C">50</text>
+          <text x="156" y="138" text-anchor="middle" font-size="9.5" fill="#D96B3C">50</text>
+          <text x="230" y="110" text-anchor="middle" font-size="9.5" fill="#D96B3C">100</text>
+        </svg>
+        <div class="legend">
+          <span><i style="background:#1B3A63"></i>个人</span>
+          <span><i style="background:#D96B3C"></i>顾客</span>
+        </div>
+        <div class="callout">
+          冲 4000 分，抛开团队成长，预估团队之后<span class="hl">中间的差距要补 1000pv</span>。
+          所以自己多做营业额：去线下门店宣传产品、拿去线下试用、多去线下社交和沟通传递。
+        </div>
+      </div>
+
+      <div class="card chart-card">
+        <h3>新增伙伴从哪来</h3>
+        <p class="sub">12.20 和 3.6 两处都写「新增 5 个」</p>
+        <div class="addwins">
+          <div class="win">
+            <div class="w-when">26.12.20 巴厘岛</div>
+            <div class="w-big">+5 人</div>
+            <div class="w-split"><b>个人 2</b> · 团队 2</div>
+            <div class="w-note">个人那 2 个主要是成长第三个团队</div>
+          </div>
+          <div class="win">
+            <div class="w-when">27.03.06</div>
+            <div class="w-big">+5 人</div>
+            <div class="w-split"><b>个人 1</b> · 帮团队 3</div>
+            <div class="w-note">这一步做到团队 25 人</div>
+          </div>
+          <div class="win">
+            <div class="w-when">27.05.15</div>
+            <div class="w-big">30 人</div>
+            <div class="w-split">拆分未写</div>
+            <div class="w-note">拿到精英骨干奖 · 4000pv</div>
+          </div>
+        </div>
+        <div class="callout">
+          两处都写「新增 5 个」，但拆出来个人 2 + 团队 2、个人 1 + 帮团队 3 都是 4 个——<span class="hl">少的 1 个文档里没写</span>，先照原样留着。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 个人工作量 ============ -->
+  <section id="work">
+    <div class="sec-head">
+      <span class="no">06</span>
+      <h2>个人工作量 · 按月</h2>
+      <span class="desc">90 天习惯养成 → 60 天</span>
+    </div>
+
+    <div class="months">
+      <div class="mon"><div class="y">2026</div><div class="m">9</div><div class="h">90 天</div><div class="d">会面 1 ×6<br>筛选 12 个 meeting</div></div>
+      <div class="mon"><div class="y">2026</div><div class="m">10</div><div class="h">90 天</div><div class="d">会面 1 ×6<br>筛选 12 个 meeting</div></div>
+      <div class="mon now"><div class="y">2026</div><div class="m">11</div><div class="h">90 天</div><div class="d">会面 1 ×6<br>筛选 12 个 meeting</div></div>
+      <div class="mon"><div class="y">2026</div><div class="m">12</div><div class="h">90 天</div><div class="d">—</div></div>
+      <div class="mon"><div class="y">2027</div><div class="m">1</div><div class="h">90 天</div><div class="d">—</div></div>
+      <div class="mon"><div class="y">2027</div><div class="m">2</div><div class="h">60 天</div><div class="d">—</div></div>
+      <div class="mon"><div class="y">2027</div><div class="m">3</div><div class="h">60 天</div><div class="d">—</div></div>
+      <div class="mon empty"><div class="y">2027</div><div class="m">4</div><div class="h">—</div><div class="d">—</div></div>
+    </div>
+
+    <p class="navishand" style="margin:14px 0 0;font-size:12.5px;color:var(--muted);line-height:1.8;">
+      9-12 月算「农忙期」，用 90 天习惯养成；2-3 月清闲，改成 60 天。表格里 12 月以后会面指标还没填。
+    </p>
+
+    <div class="flow">
+      <div class="flow-card">
+        <div class="k">月度目标</div>
+        <div class="v">约到 10 个会面</div>
+        <div class="s">每月</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="flow-card">
+        <div class="k">倒推周任务</div>
+        <div class="v">2-3 个会面 / 周</div>
+        <div class="s">10 个会面成功 1 个来倒推</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="flow-card">
+        <div class="k">日行动</div>
+        <div class="v">2-3 个有效对话 / 天</div>
+        <div class="s">这是最关键的一步</div>
+      </div>
+    </div>
+
+    <div class="daily">
+      <div>
+        <h3>每日底线</h3>
+        <p class="sub">文档里 9 月那一行写死的三条；勾选只存在这台设备</p>
+        <div class="checks" id="checks">
+          <label class="check"><input type="checkbox" data-k="mg1"><span class="box"></span><span class="txt">每周 2-3 个 mg1</span></label>
+          <label class="check"><input type="checkbox" data-k="talk"><span class="box"></span><span class="txt">每天 3 个聊到副业目标</span></label>
+          <label class="check"><input type="checkbox" data-k="health"><span class="box"></span><span class="txt">每天 1 个健康对话</span></label>
+        </div>
+      </div>
+      <div class="score">
+        <b id="daily-score">0/3</b>
+        <span>今天</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 奖励 ============ -->
+  <section id="rewards">
+    <div class="sec-head">
+      <span class="no">07</span>
+      <h2>奖励机制，梦想板上</h2>
+      <span class="desc">文档新增：温泉 spa / 小米 SU7 / 苹果电脑 / 大疆 3 / 攀岩</span>
+    </div>
+
+    <div class="reward-gallery">
+      <figure class="rg">
+        <img src="assets/rewards/onsen.jpg" alt="温泉 spa">
+        <figcaption>温泉 spa<small>1 月 · 20 人</small></figcaption>
+      </figure>
+      <figure class="rg">
+        <img src="assets/rewards/su7.jpg" alt="小米 SU7">
+        <figcaption>小米 SU7<small>新一代 SU7</small></figcaption>
+      </figure>
+      <figure class="rg">
+        <img src="assets/rewards/macbook.jpg" alt="苹果电脑">
+        <figcaption>苹果电脑<small>MacBook</small></figcaption>
+      </figure>
+      <figure class="rg">
+        <img src="assets/rewards/dji.jpg" alt="大疆无人机">
+        <figcaption>大疆 3<small>无人机</small></figcaption>
+      </figure>
+      <figure class="rg">
+        <img src="assets/rewards/climb.jpg" alt="攀岩">
+        <figcaption>攀岩<small>12 月 · 2600</small></figcaption>
+      </figure>
+    </div>
+    <p class="gallery-note">文档里写的图：温泉 spa、小米 SU7、苹果电脑、大疆 3、攀岩。图片来自 Unsplash 与小米汽车官网，只作个人激励用。</p>
+
+    <div class="rewards">
+      <div class="reward">
+        <div class="when">2026.12</div>
+        <div class="what">2600 · 酒吧、攀岩</div>
+        <div class="cond">写到 12 月这一格</div>
+        <div class="amt">板上没有写金额</div>
+      </div>
+      <div class="reward">
+        <div class="when">2027.01</div>
+        <div class="what">20 人 · 温泉 spa</div>
+        <div class="cond">团队 20 人一起去</div>
+        <div class="amt">预算 <b>4000</b></div>
+      </div>
+      <div class="reward">
+        <div class="when">2027.05</div>
+        <div class="what">30 人 · 待定</div>
+        <div class="cond">板上只写了「30 人 -」</div>
+        <div class="amt">还没填</div>
+      </div>
+    </div>
+
+    <div class="awards">
+      <table>
+        <thead>
+          <tr><th style="width:150px;">节点</th><th>要拿到的</th><th style="width:180px;">对应的数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2026.09</td><td>基础骨干奖</td><td>1600pv</td></tr>
+          <tr><td>2026.12.20</td><td>巴厘岛 · 3—6 · 拿下基础骨干奖</td><td>6 个 B 阶段 · 新增 5 个伙伴</td></tr>
+          <tr><td>2027.03.06</td><td>团队到 25 人</td><td>新增 5 个（个人 1、帮团队 3）</td></tr>
+          <tr><td>2027.05.15</td><td>团队到 30 人 · 拿到精英骨干奖</td><td>4000pv</td></tr>
+          <tr><td>2027.08.30</td><td>冲最高分红比例</td><td>10000pv · 21%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <span>来源：飞书文档《26.9-27.9 目标版 副本》· 所有数字从原文与画板照抄，文档里空着的地方这里也空着</span>
+    <a href="https://q1e2yfc2bey.feishu.cn/docx/YYM3dKfVroeFjtx59EjcDkZYnLb" target="_blank" rel="noopener">打开原文档</a>
+  </footer>
+</div>
+
+<div class="lightbox" id="lightbox"><img src="assets/dream.jpg" alt="梦想板放大"></div>
+
+<script>
+(function(){
+
+  /* ================= 团队结构：五张画板 ================= */
+  var STAGES = [
+    {
+      id:'sep', tab:'2026.09', label:'基础骨干奖',
+      total:1600, meta:['总 <b>1600pv</b>', '三条腿 600 / 800 / 200', '画板：九月'],
+      legs:[
+        {idx:'腿 1', name:'宇茹', pv:600, chain:[{n:'烟岚'},{n:'雯婷'},{n:'钱浩栋'},{n:'夏天'},{n:'艳艳', sib:true}]},
+        {idx:'腿 2', name:'秀清', pv:800, chain:[{n:'洋洋'},{n:'吴思宇'},{n:'林慧'},{n:'艳艳'},{n:'乐妍'}]},
+        {idx:'腿 3', name:'小玲', pv:200, chain:[]}
+      ],
+      loose:[],
+      notes:'画板里除了乐妍，其余名字都打了勾。',
+      pvNote:'根节点标注 1600pv；三个分支分别 600 / 800 / 200。'
+    },
+    {
+      id:'dec', tab:'2026.12.20', label:'巴厘岛 · 3-6',
+      total:'2000–2500', meta:['总 <b>2000—2500pv</b>', '6 个 B 阶段伙伴', '新增 5 个伙伴：个人 2、团队 2'],
+      legs:[
+        {idx:'腿 1', name:'宇茹', pv:600, chain:[
+          {n:'烟岚', tag:'B 阶段'},
+          {n:'雯婷'},
+          {n:'钱浩栋'},
+          {n:'夏天'},
+          {n:'夏丽'},
+          {n:'王艳', sib:true, tag:'雯婷下面、和钱浩栋同级'}
+        ]},
+        {idx:'腿 2', name:'秀清', pv:1000, chain:[
+          {n:'洋洋', tag:'B 阶段'},
+          {n:'吴思宇', tag:'B 阶段'},
+          {n:'林慧'},
+          {n:'艳艳'},
+          {n:'乐妍'}
+        ]},
+        {idx:'腿 3', name:'小玲', pv:300, chain:[]}
+      ],
+      loose:[],
+      notes:'这一版画板只标了 B 阶段，没有写每个人的 pv；夏天下面新加了夏丽，雯婷下面多了王艳。',
+      pvNote:'根节点标注 2000pv—2500pv；三条腿 600 / 1000 / 300。'
+    },
+    {
+      id:'mar', tab:'2027.03.06', label:'25 人',
+      total:3100, meta:['三条腿 600 / 1500 / 800', '新增 5 个：个人 1、帮团队 3', '团队到 25 人'],
+      legs:[
+        {idx:'腿 1', name:'宇茹', pv:600, chain:[
+          {n:'烟岚', tag:'B 阶段'},
+          {n:'雯婷'},
+          {n:'钱浩栋'},
+          {n:'夏天'},
+          {n:'艳艳', sib:true}
+        ]},
+        {idx:'腿 2', name:'秀清', pv:1500, chain:[
+          {n:'洋洋', tag:'B 阶段'},
+          {n:'吴思宇', tag:'B 阶段'},
+          {n:'林慧', tag:'B 阶段'},
+          {n:'艳艳'},
+          {n:'乐妍', tag:'B 阶段'}
+        ]},
+        {idx:'腿 3', name:'小玲', pv:800, chain:[], tag:'B 阶段'}
+      ],
+      loose:[],
+      notes:'3 月这张画板把 6 个人都涂成了 B 阶段的蓝底：烟岚、洋洋、吴思宇、林慧、乐妍、小玲。',
+      pvNote:'根节点旁 600 / 1500 / 800；这张图没有画新的腿。'
+    },
+    {
+      id:'may', tab:'2027.05.15', label:'30 人 · 精英骨干',
+      total:4100, meta:['六条腿 600 / 1500 / 800 / 600 / 200 / 200', '团队到 30 人', '加个人 200pv 正好 4100'],
+      legs:[
+        {idx:'腿 1', name:'宇茹', pv:600, chain:[
+          {n:'烟岚'},{n:'雯婷'},{n:'钱浩栋'},{n:'夏天'},{n:'艳艳', sib:true}
+        ]},
+        {idx:'腿 2', name:'秀清', pv:1500, chain:[
+          {n:'洋洋', tag:'10 人'},
+          {n:'吴思宇'},
+          {n:'林慧'},
+          {n:'艳艳'},
+          {n:'乐妍', tag:'AR'}
+        ]},
+        {idx:'腿 3', name:'小玲', pv:800, chain:[]},
+        {idx:'腿 4', name:'新腿', pv:600, newleg:true, chain:[]},
+        {idx:'腿 5', name:'新腿', pv:200, newleg:true, chain:[]},
+        {idx:'腿 6', name:'新腿', pv:200, newleg:true, chain:[]}
+      ],
+      loose:['小吴','喻燕'],
+      notes:'画板旁注：11.8 个人 / 9 个人 / 10 个人 / 11.8 个人 / 12 团队 AB / 9 思宇、林慧 C，乐妍 AB / 12 团队 C；左下角仍是 小吴、喻燕两人；六个新人的位置标了「1 月个人 / 2 月个人 / 3 月个人 / 4 月个人 / 5 月个人」。',
+      pvNote:'根节点旁 600 / 1500 / 800 / 600 / 200 / 200，与 4000pv 那档收入模拟的六个市场一致。'
+    }
+  ];
+
+  var tabsEl = document.getElementById('stage-tabs');
+  var metaEl = document.getElementById('stage-meta');
+  var legsEl = document.getElementById('legs');
+  var looseEl = document.getElementById('loose');
+  var notesEl = document.getElementById('side-notes');
+  var sumEl = document.getElementById('root-sum');
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function renderStage(idx){
+    var st = STAGES[idx];
+    Array.prototype.forEach.call(tabsEl.children, function(b, i){ b.classList.toggle('on', i === idx); });
+
+    metaEl.innerHTML = st.meta.map(function(m){ return '<span>' + m + '</span>'; }).join('');
+    sumEl.innerHTML = '总 <b>' + esc(st.total) + '</b> pv';
+
+    legsEl.innerHTML = st.legs.map(function(leg){
+      var chain = (leg.chain || []).map(function(c){
+        return '<li' + (c.n === '诗媛' ? ' class="self"' : '') + '>'
+          + (c.sib ? '<span class="sib-mark">↳</span>' : '')
+          + '<b>' + esc(c.n) + '</b>'
+          + (c.pv ? '<span class="pv">' + esc(c.pv) + 'pv</span>' : '')
+          + (c.tag ? '<span class="note">' + esc(c.tag) + '</span>' : '')
+          + '</li>';
+      }).join('');
+      var head = leg.newleg
+        ? '<div class="leg-h"><span class="idx">待开</span><span class="name">' + esc(leg.name) + '</span>'
+          + (leg.pv ? '<span class="pv">' + esc(leg.pv) + '<small>pv</small></span>' : '<span class="pv" style="color:#c3bfb4">—</span>')
+          + '</div>'
+        : '<div class="leg-h"><span class="idx">' + esc(leg.idx) + '</span><span class="name">' + esc(leg.name) + '</span>'
+          + '<span class="pv">' + esc(leg.pv) + '<small>pv</small></span></div>';
+      var body = chain || leg.tag
+        ? '<div class="leg-b">' + (chain ? '<ul class="chain">' + chain + '</ul>' : '')
+          + (leg.tag ? '<p style="margin:2px 0 0;font-size:11.5px;color:var(--muted);line-height:1.6;">' + esc(leg.tag) + '</p>' : '')
+          + '</div>'
+        : '<div class="leg-b"><p style="margin:2px 0 0;font-size:11.5px;color:#c3bfb4;">画板上这条腿下面没有画人</p></div>';
+      return '<div class="leg' + (leg.newleg ? ' new' : '') + '">' + head + body + '</div>';
+    }).join('');
+
+    looseEl.innerHTML = st.loose && st.loose.length
+      ? '画板左下角单独两人：' + st.loose.map(function(n){ return '<span>' + esc(n) + '</span>'; }).join('')
+      : '';
+    notesEl.innerHTML = '<b>旁注</b>：' + esc(st.notes) + '<br><b>PV</b>：' + esc(st.pvNote);
+  }
+
+  STAGES.forEach(function(st, i){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tab' + (i === 1 ? ' on' : '');
+    b.innerHTML = esc(st.tab) + (st.label ? '<span style="opacity:.62;margin-left:6px;font-weight:400">' + esc(st.label) + '</span>' : '');
+    b.addEventListener('click', function(){ renderStage(i); });
+    tabsEl.appendChild(b);
+  });
+  renderStage(1);
+
+  /* ================= B 阶段伙伴计数器 ================= */
+  var KEY_ASSEMBLY = 'goal2027.bstage';
+  var TOTAL = 6, START = 3;
+  var dotsEl = document.getElementById('assembly-dots');
+  var countEl = document.getElementById('assembly-count');
+  var arrived = START;
+  try {
+    var saved = localStorage.getItem(KEY_ASSEMBLY);
+    if (saved !== null) arrived = Math.max(0, Math.min(TOTAL, parseInt(saved, 10) || 0));
+  } catch(e){}
+
+  function paintAssembly(){
+    dotsEl.innerHTML = '';
+    for (var i = 0; i < TOTAL; i++){
+      (function(i){
+        var d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'dot' + (i < arrived ? ' on' : '');
+        d.setAttribute('aria-label', '第 ' + (i + 1) + ' 人');
+        d.addEventListener('click', function(){
+          arrived = (i + 1 === arrived) ? i : i + 1;
+          try { localStorage.setItem(KEY_ASSEMBLY, arrived); } catch(e){}
+          paintAssembly();
+        });
+        dotsEl.appendChild(d);
+      })(i);
+    }
+    countEl.textContent = '已标 ' + arrived + ' / ' + TOTAL + ' 个 B 阶段　还差 ' + (TOTAL - arrived) + ' 个';
+  }
+  paintAssembly();
+
+  /* ================= 每日底线 ================= */
+  var KEY_DAILY = 'goal2027.daily';
+  var boxes = document.querySelectorAll('#checks input');
+  var scoreEl = document.getElementById('daily-score');
+  var today = new Date(), dayKey = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  var state = {};
+  try {
+    var raw = JSON.parse(localStorage.getItem(KEY_DAILY) || 'null');
+    if (raw && raw.day === dayKey) state = raw.done || {};
+  } catch(e){}
+
+  function paintDaily(){
+    var n = 0;
+    Array.prototype.forEach.call(boxes, function(b){
+      b.checked = !!state[b.dataset.k];
+      if (b.checked) n++;
+    });
+    scoreEl.textContent = n + '/3';
+    try { localStorage.setItem(KEY_DAILY, JSON.stringify({ day: dayKey, done: state })); } catch(e){}
+  }
+  Array.prototype.forEach.call(boxes, function(b){
+    b.addEventListener('change', function(){
+      if (b.checked) state[b.dataset.k] = true; else delete state[b.dataset.k];
+      paintDaily();
+    });
+  });
+  paintDaily();
+
+  /* ================= 梦想板放大 ================= */
+  var lightbox = document.getElementById('lightbox');
+  document.getElementById('dream-photo').addEventListener('click', function(){
+    lightbox.classList.add('show');
+  });
+  lightbox.addEventListener('click', function(){ lightbox.classList.remove('show'); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lightbox.classList.remove('show'); });
+
+  /* ================= 顶栏高亮 ================= */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.navlinks a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var i = sections.indexOf(en.target);
+        if (i < 0) return;
+        links.forEach(function(a, j){ a.classList.toggle('on', j === i); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(function(s){ if (s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
