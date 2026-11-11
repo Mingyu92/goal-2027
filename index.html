@@ -286,17 +286,24 @@
   .reward .cond{font-size:12.5px;color:var(--muted);}
   .reward .amt{margin-top:12px;font-size:12px;color:#4a4f5a;font-variant-numeric:tabular-nums;}
   .reward .amt b{color:var(--navy);font-size:15px;}
-  .reward-gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;margin-bottom:10px;}
-  .rg{position:relative;margin:0;border-radius:6px;overflow:hidden;background:#0f1621;aspect-ratio:4/3;}
-  .rg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
-  .rg:hover img{transform:scale(1.05);}
-  .rg figcaption{
-    position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;
-    background:linear-gradient(transparent,rgba(15,22,33,.8));color:#fff;
-    font-size:12.5px;font-weight:600;letter-spacing:.02em;line-height:1.35;
-  }
-  .rg figcaption small{display:block;font-size:10.5px;font-weight:400;color:rgba(255,255,255,.72);margin-top:1px;letter-spacing:.03em;}
-  .gallery-note{margin:0 0 22px;font-size:11.5px;color:var(--muted);line-height:1.7;}
+  .rw-stack{display:flex;flex-direction:column;gap:18px;}
+  .rw{background:#fff;border:1px solid var(--line);border-radius:7px;overflow:hidden;}
+  .rw-media{display:grid;grid-template-columns:1fr 1fr;}
+  .pic{position:relative;margin:0;overflow:hidden;background:#f7f4ec;}
+  .pic img{display:block;width:100%;height:330px;object-fit:cover;}
+  .pic span{position:absolute;left:12px;bottom:12px;background:rgba(15,22,33,.6);color:#fff;font-size:11.5px;padding:2px 10px;border-radius:999px;letter-spacing:.04em;}
+  .pic.contain img{object-fit:contain;padding:26px;}
+  .pic.wide img{height:340px;}
+  .rw-media .pic img{height:360px;}
+  .rw-body{padding:16px 20px 17px;}
+  .rw-when{font-size:11.5px;letter-spacing:.1em;color:var(--orange);font-weight:700;}
+  .rw-body h3{margin:3px 0 6px;font-size:18px;color:var(--navy);line-height:1.35;}
+  .rw-meta{font-size:12.5px;color:var(--muted);}
+  .rw-meta b{color:var(--navy);font-size:16px;font-variant-numeric:tabular-nums;}
+  .rw-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .rw-long{margin-top:8px;}
+  .rw-long .sec-sub{font-size:11.5px;letter-spacing:.16em;color:var(--muted);margin-bottom:9px;}
+  .bstage{background:var(--blue);color:#fff;border-radius:999px;padding:1px 9px;font-weight:600;}
   .awards{margin-top:20px;}
   .awards table{width:100%;border-collapse:collapse;background:#fff;font-size:13px;}
   .awards th,.awards td{border:1px solid var(--line);padding:9px 12px;text-align:left;}
@@ -328,7 +335,10 @@
     .daily{grid-template-columns:1fr;}
     .daily .score{text-align:left;}
     .rewards{grid-template-columns:1fr;}
-    .reward-gallery{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .rw-pair{grid-template-columns:1fr;}
+    .rw-media{grid-template-columns:1fr 1fr;}
+    .rw-media .pic img{height:200px;}
+    .pic img,.pic.wide img{height:250px;}
     .tl-item{grid-template-columns:76px 18px minmax(0,1fr);gap:12px;}
     .tl-date b{font-size:15px;}
     .tl-rail::before{left:8px;}
@@ -780,50 +790,59 @@
       <span class="desc">文档新增：温泉 spa / 小米 SU7 / 苹果电脑 / 大疆 3 / 攀岩</span>
     </div>
 
-    <div class="reward-gallery">
-      <figure class="rg">
-        <img src="assets/rewards/onsen.jpg" alt="温泉 spa">
-        <figcaption>温泉 spa<small>1 月 · 20 人</small></figcaption>
-      </figure>
-      <figure class="rg">
-        <img src="assets/rewards/su7.jpg" alt="小米 SU7">
-        <figcaption>小米 SU7<small>新一代 SU7</small></figcaption>
-      </figure>
-      <figure class="rg">
-        <img src="assets/rewards/macbook.jpg" alt="苹果电脑">
-        <figcaption>苹果电脑<small>MacBook</small></figcaption>
-      </figure>
-      <figure class="rg">
-        <img src="assets/rewards/dji.jpg" alt="大疆无人机">
-        <figcaption>大疆 3<small>无人机</small></figcaption>
-      </figure>
-      <figure class="rg">
-        <img src="assets/rewards/climb.jpg" alt="攀岩">
-        <figcaption>攀岩<small>12 月 · 2600</small></figcaption>
-      </figure>
-    </div>
-    <p class="gallery-note">文档里写的图：温泉 spa、小米 SU7、苹果电脑、大疆 3、攀岩。图片来自 Unsplash 与小米汽车官网，只作个人激励用。</p>
+    <div class="rw-stack">
+      <article class="rw">
+        <div class="rw-media">
+          <figure class="pic"><img src="assets/rewards/bar.jpg" alt="酒吧"><span>酒吧</span></figure>
+          <figure class="pic"><img src="assets/rewards/climb.jpg" alt="攀岩"><span>攀岩</span></figure>
+        </div>
+        <div class="rw-body">
+          <div class="rw-when">2026.12.20 · 达标巴厘岛</div>
+          <h3>新增 5 人：酒吧、攀岩</h3>
+          <div class="rw-meta">预算 <b>1000</b></div>
+        </div>
+      </article>
 
-    <div class="rewards">
-      <div class="reward">
-        <div class="when">2026.12</div>
-        <div class="what">2600 · 酒吧、攀岩</div>
-        <div class="cond">写到 12 月这一格</div>
-        <div class="amt">板上没有写金额</div>
+      <div class="rw-pair">
+        <article class="rw">
+          <figure class="pic"><img src="assets/rewards/onsen.jpg" alt="温泉 spa"></figure>
+          <div class="rw-body">
+            <div class="rw-when">2027.03.06 · 25 人</div>
+            <h3>温泉 spa</h3>
+            <div class="rw-meta">预算 <b>1000</b></div>
+          </div>
+        </article>
+        <article class="rw">
+          <figure class="pic contain"><img src="assets/rewards/pocket.jpg" alt="大疆 Osmo Pocket 3"></figure>
+          <div class="rw-body">
+            <div class="rw-when">2027.05 · 30 人</div>
+            <h3>大疆 Pocket 3</h3>
+            <div class="rw-meta">预算 <b>2000</b></div>
+          </div>
+        </article>
       </div>
-      <div class="reward">
-        <div class="when">2027.01</div>
-        <div class="what">20 人 · 温泉 spa</div>
-        <div class="cond">团队 20 人一起去</div>
-        <div class="amt">预算 <b>4000</b></div>
-      </div>
-      <div class="reward">
-        <div class="when">2027.05</div>
-        <div class="what">30 人 · 待定</div>
-        <div class="cond">板上只写了「30 人 -」</div>
-        <div class="amt">还没填</div>
+
+      <div class="rw-long">
+        <div class="sec-sub">长期奖励</div>
+        <div class="rw-pair">
+          <article class="rw">
+            <figure class="pic wide"><img src="assets/rewards/su7.jpg" alt="小米 SU7"></figure>
+            <div class="rw-body">
+              <h3>小米 SU7</h3>
+              <div class="rw-meta">长期目标</div>
+            </div>
+          </article>
+          <article class="rw">
+            <figure class="pic wide"><img src="assets/rewards/macbook.jpg" alt="苹果电脑"></figure>
+            <div class="rw-body">
+              <h3>苹果电脑</h3>
+              <div class="rw-meta">长期目标</div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
+    <p class="gallery-note">图片来自 Unsplash、小米汽车官网、DJI 官网，只作个人激励用。</p>
 
     <div class="awards">
       <table>
@@ -958,18 +977,20 @@
 
     legsEl.innerHTML = st.legs.map(function(leg){
       var chain = (leg.chain || []).map(function(c){
+        var bcl = (c.tag && c.tag.indexOf('B 阶段') >= 0) ? ' class="bstage"' : '';
         return '<li' + (c.n === '诗媛' ? ' class="self"' : '') + '>'
           + (c.sib ? '<span class="sib-mark">↳</span>' : '')
-          + '<b>' + esc(c.n) + '</b>'
+          + '<b' + bcl + '>' + esc(c.n) + '</b>'
           + (c.pv ? '<span class="pv">' + esc(c.pv) + 'pv</span>' : '')
           + (c.tag ? '<span class="note">' + esc(c.tag) + '</span>' : '')
           + '</li>';
       }).join('');
+      var lbf = (leg.tag && leg.tag.indexOf('B 阶段') >= 0) ? ' class="bstage"' : '';
       var head = leg.newleg
         ? '<div class="leg-h"><span class="idx">待开</span><span class="name">' + esc(leg.name) + '</span>'
           + (leg.pv ? '<span class="pv">' + esc(leg.pv) + '<small>pv</small></span>' : '<span class="pv" style="color:#c3bfb4">—</span>')
           + '</div>'
-        : '<div class="leg-h"><span class="idx">' + esc(leg.idx) + '</span><span class="name">' + esc(leg.name) + '</span>'
+        : '<div class="leg-h"><span class="idx">' + esc(leg.idx) + '</span><span' + lbf + '>' + esc(leg.name) + '</span>'
           + '<span class="pv">' + esc(leg.pv) + '<small>pv</small></span></div>';
       var body = chain || leg.tag
         ? '<div class="leg-b">' + (chain ? '<ul class="chain">' + chain + '</ul>' : '')
